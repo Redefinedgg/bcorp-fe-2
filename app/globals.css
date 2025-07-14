@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Signate Grotesk';
+  src: url('/fonts/signategrotesk-black.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  min-width: 320px;
+}
+
+.container {
+  max-width: 1235px;
+  padding: 0px 20px;
+  margin: 0 auto;
+}
+
+.header-shadow {
+  box-shadow: 0px -1px 11.5px 0px #00000040;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}
+
+.translate-y-[-100%] {
+  transform: translateY(-100%);
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+.absolute-navbar-x-center {
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.education-card-1 {
+  background: linear-gradient(193.12deg, #FFBB72 -9.35%, #F1830E 106.56%);
+}
+
+.education-card-2 {
+  background: linear-gradient(199.45deg, #92CFF0 1.52%, #64A4C6 121.35%);
+}
+
+.education-card-3 {
+  background: linear-gradient(199.45deg, #92CFF0 1.52%, #64A4C6 121.35%);
+}
+
+.education-card-4 {
+  border: 3px solid rgba(241, 131, 14, 1)
+}
+
+.whyWeCard-1 {
+  background: linear-gradient(200.15deg, #FFBB72 -6.67%, #F1830E 150.59%);
+}
+
+.whyWeCard-2 {
+  background: linear-gradient(239.54deg, #FFBB72 2.39%, #F1830E 188.37%);
+}
+
+.whyWeCard-3 {
+  background: linear-gradient(152.95deg, #FFBB72 10.84%, #F1830E 138.99%);
+}
+
+.whyWeCard-4 {
+  background: linear-gradient(13.76deg, #FFBB72 7.08%, #F1830E 127.98%);
+}
+
+.about-us-cards {
+  background: linear-gradient(130.71deg, #FFBB72 26.21%, #F1830E 125.82%);
+}
+
+.about-us-third-cards {
+  background: linear-gradient(93.67deg, #FFBB72 6.4%, #F1830E 141.07%);
+}
+
+.modal-bg {
+  background: linear-gradient(193.12deg, #FFBB72 -9.35%, #F1830E 106.56%);
+}
+
+.schedule-btn {
+  background: linear-gradient(#FFBB72 -9.35%, #F1830E 106.56%);
+}
+
+.schedule-picked-btn {
+  background: linear-gradient(199.45deg, #92CFF0 1.52%, #64A4C6 121.35%);
+}
+
+@keyframes dropdownNavBar {
+  from {
+    bottom: 0px;
+  }
+
+  to {
+    bottom: -200px;
+  }
+}
