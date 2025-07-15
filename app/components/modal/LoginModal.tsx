@@ -9,7 +9,7 @@ import { useModalStore } from "@/app/stores/modalStore";
 import { toast } from "react-toastify";
 import useUserStore from "@/app/stores/userStore";
 import { useNavigation } from "@/app/hooks/useNavigation";
-
+import CloseModal from "./CloseModal";
 
 const wrapper = cva(['modal-bg']);
 const h2 = cva(['text-center text-[25px] font-signate text-white mb-[20px]'])
@@ -75,6 +75,7 @@ const LoginModal = () => {
 
   return (
     <Modal isOpen={isLoginOpen} onClose={closeLoginModal} wrapperClasses="modal-bg">
+      <CloseModal isLoginOrRegister="login" />
       <div className={wrapper()}>
         <h2 className={h2()}>{t("header")}</h2>
 

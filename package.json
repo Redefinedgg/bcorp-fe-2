@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "class-variance-authority": "^0.7.0",
+    "class-variance-authority": "^0.7.1",
     "jose": "^5.9.6",
     "jsonwebtoken": "^9.0.2",
     "next": "15.0.0-rc.0",

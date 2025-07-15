@@ -10,6 +10,7 @@ import Button from "@/app/ui/Button";
 import { useModalStore } from "@/app/stores/modalStore";
 import useLocaleStore from "@/app/stores/localeStore";
 import { toast } from "react-toastify";
+import CloseModal from "./CloseModal";
 
 const h2 = cva([' text-[25px] font-signate font-bold text-orange mb-[20px]'])
 const inputWrapper = cva(['flex flex-col mb-[15px]'])
@@ -127,6 +128,7 @@ const RegisterModal = () => {
 
   return (
     <Modal isOpen={isRegisterOpen} onClose={closeRegisterModal}>
+      <CloseModal isLoginOrRegister="register" />
       <h2 className={h2()}>{t("header")}</h2>
 
       <form onKeyDown={handleKeyDown}>
