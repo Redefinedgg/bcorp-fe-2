@@ -42,7 +42,7 @@ const RegisterModal = () => {
       body: JSON.stringify({
         name,
         email,
-        role,
+        role: "student",
         birthDate,
         password,
         repeatPassword,

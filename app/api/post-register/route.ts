@@ -4,9 +4,9 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { name, email, role, birthDate, password, repeatPassword, locale } = body;
+    const { name, email, birthDate, password, repeatPassword, locale } = body;
 
-    if (!name || !email || !role || !password || !repeatPassword || !birthDate) {
+    if (!name || !email || !password || !repeatPassword || !birthDate) {
       return NextResponse.json(
         { error: 'All fields are required.', message: 'All fields are required!' },
         { status: 400 }
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
           surname,
           email,
           regType: 'form',
-          role,
+          role: "student",
           birthDate,
           password,
           repeatPassword,

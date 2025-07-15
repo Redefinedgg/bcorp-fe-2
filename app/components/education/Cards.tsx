@@ -4,6 +4,7 @@ import React from "react";
 import { EducationCard } from "@/app/types/educationCard";
 import Button from "@/app/ui/Button";
 import { cva } from "class-variance-authority";
+import Link from "next/link";
 
 const cardsWrapper = cva(['grid grid-cols-2 gap-[20px]']);
 const cardStyles = cva(['flex flex-col text-center p-[30px] rounded-[50px] ']);
@@ -24,7 +25,9 @@ export default function EducationCards({ cards }: { cards: EducationCard[] }) {
                     <h3 className={h3()}>{card.title}</h3>
                     <p className={p()}>{card.descr}</p>
                     <div className={buttonWrapper()}>
-                        <Button classes={btnClasses()} onClick={click} label={`${card.btnText}`} variant={`${card.btnStyle}`} />
+                        <Link href="/ru/profile/2">
+                            <Button classes={btnClasses()} onClick={click} label={`${card.btnText}`} variant={`${card.btnStyle}`} />
+                        </Link>
                     </div>
                 </div>
             ))}

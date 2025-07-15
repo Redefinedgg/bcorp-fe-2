@@ -8,11 +8,8 @@ import Button from "@/app/ui/Button";
 import { useModalStore } from "@/app/stores/modalStore";
 import { toast } from "react-toastify";
 import useUserStore from "@/app/stores/userStore";
+import { useNavigation } from "@/app/hooks/useNavigation";
 
-interface LoginModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
 
 const wrapper = cva(['modal-bg']);
 const h2 = cva(['text-center text-[25px] font-signate text-white mb-[20px]'])
@@ -27,6 +24,7 @@ const btn = cva(['font-bold text-white']);
 const LoginModal = () => {
   const { isLoginOpen, closeLoginModal, openRegisterModal } = useModalStore();
   const { setIsLoggedIn, updateProfile } = useUserStore();
+  const { goToDashboard } = useNavigation();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -59,6 +57,7 @@ const LoginModal = () => {
 
         toast.success(t("success-login"));
         closeLoginModal(); 
+        goToDashboard();
       }
   };
 
