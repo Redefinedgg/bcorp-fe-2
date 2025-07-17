@@ -20,7 +20,8 @@ const useUserStore = create(
         emailVerificationToken: null,
         emailVerified: null,
         registrationType: null,
-      },
+        lessons: {},
+        },
       isLoggedIn: false,
       jwtToken: null,
 
@@ -52,6 +53,7 @@ const useUserStore = create(
             emailVerificationToken: null,
             emailVerified: null,
             registrationType: null,
+            lessons: {},
           },
           isLoggedIn: false,
         }),

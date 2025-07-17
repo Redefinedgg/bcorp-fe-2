@@ -47,7 +47,7 @@ export default function Education() {
     ];
 
     return (
-        <section className={section()}>
+        <section id="education" className={section()}>
             <h2 className={h2()}>{t("header")}</h2>
             <div className={contentWrapper()}>
                 <EducationCards cards={cards} />

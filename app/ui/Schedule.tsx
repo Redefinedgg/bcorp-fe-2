@@ -7,9 +7,12 @@ import useUserStore from "../stores/userStore";
 import { useGlobalContext } from "../context/GlobalContext";
 import Button from "./Button";
 import LessonModal from "./LessonModal";
+import Link from "next/link";
+import useLocaleStore from "../stores/localeStore";
+
 
 const wrapper = cva([
-  "relative w-full min-h-[250px] rounded-[30px] border-[3px] border-orange overflow-hidden"
+  "relative w-[800px] h-[500px] rounded-[30px] border-[3px] border-orange overflow-hidden"
 ], {
   variants: {
     noLessons: {
@@ -72,6 +75,7 @@ const noLessonsh2 = cva(['text-[18px] font-bold']);
 const noLessonsp = cva(['mb-[20px]']);
 
 export default function Schedule({ lessons }: { lessons: Record<string, Record<string, { id: number, Subject: string, Teacher: string, Student: string }>> }) {
+  const { locale } = useLocaleStore();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [selectedLesson, setSelectedLesson] = useState<{
@@ -132,7 +136,9 @@ export default function Schedule({ lessons }: { lessons: Record<string, Record<s
           <div className={noLessonsWrapper()}>
               <h2 className={noLessonsh2()}>{t("no-lessons-header")}</h2>
               <p className={noLessonsp()}>{t("no-lessons-descr")}</p>
-              <Button classes="py-[12px]" variant="fullOrange" label={t("no-lessons-btn")} onClick={toAllLessons} />
+              <Link href={`/${locale}#education`}>
+                <Button classes="py-[12px]" variant="fullOrange" label={t("no-lessons-btn")} onClick={toAllLessons} />
+              </Link>
           </div>
         </>
       ) : selectedDay === null ? (

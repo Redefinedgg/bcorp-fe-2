@@ -3,11 +3,14 @@
 import ProfileDescr from "@/app/components/profile/descr";
 import ProfileTeacherSchedule from "@/app/components/profile/schedule";
 import useProfilesStore from "@/app/stores/profilesStore";
+import { rolesEnum } from "@/app/types/user";
 import { cva } from "class-variance-authority";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
+import SpecialOffers from "@/app/components/specialOffers";
 
 const wrapper = cva(['container']);
+const section = cva(['flex']);
 
 export default function Profile() {
     const { userId } = useParams();
@@ -38,7 +41,11 @@ export default function Profile() {
                 descr={currentUserProfile.descr || ''}
                 userId={Number(userId)}
             />
-            {currentUserProfile.role === 'teacher' && <ProfileTeacherSchedule />}
+            {/* Рассписание + спец предложения */}
+            <section className={section()}>
+                {currentUserProfile.role === rolesEnum.TEACHER && <ProfileTeacherSchedule lessons={currentUserProfile.lessons} />}
+                <SpecialOffers />
+            </section>
         </div>
     )
 }

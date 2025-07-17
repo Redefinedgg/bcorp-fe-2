@@ -11,5 +11,17 @@ export interface UserProfile {
     emailVerified: boolean | null;
     smallAvatar: string | null;
     registrationType: string | null;
-    role: string | null;
+    role: rolesEnum | null;
+    lessons: Record<string, Record<string, { id: number; Subject: string; Teacher: string; Student: string; }>>;
 }
+
+export interface LessonsSchedule {
+    lessons: Record<string, Record<string, { id: number; Subject: string; Teacher: string; Student: string; }>>;
+}
+
+export enum rolesEnum {
+    STUDENT = 'student',
+    TEACHER = 'teacher',
+    ADMIN = 'admin',
+  }
+  

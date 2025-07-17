@@ -20,6 +20,7 @@ const useProfilesStore = create(
         emailVerificationToken: null,
         emailVerified: null,
         registrationType: null,
+        lessons: {},
       },
 
       setCurrentUserProfile: (profile: UserProfile) =>
